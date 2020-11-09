@@ -1,0 +1,373 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 3rem;
+  --nav-width: 68px;
+
+  /*===== Colors =====*/
+  --first-color: #3572b0;
+  --first-color-light: #AFA5D9;
+  --white-color: #F7F6FB;
+  
+  /*===== Font and typography =====*/
+  --body-font: 'Nunito', sans-serif;
+  --normal-font-size: 1rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+  background-color: #f1f2f7;
+}
+
+a{
+  text-decoration: none;
+}
+
+/*===== HEADER =====*/
+.header{
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--white-color);
+  z-index: var(--z-fixed);
+  transition: .5s;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.header__toggle{
+  color: var(--first-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.header-score{
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__img{
+  width: 210px;
+  height: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border-radius: 50%; */
+  overflow: hidden;
+}
+
+.score{
+  height: 45px;
+  text-align: center;
+}
+
+.score span{
+  color: #767676;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.score p{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  font-weight: 500;
+  margin: 0;
+  color: #767676;
+}
+
+.header__img i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  line-height: 35px;
+  font-size: 25px;
+}
+
+.header__img i:hover{
+  background-color: #E1DFE4;
+  border-radius: 50%;
+}
+
+.header__img img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.dropbtn {
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+/*===== NAV =====*/
+.l-navbar{
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--first-color);
+  padding: .5rem 1rem 0 0;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+.nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__logo, .nav__link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+.nav__logo{
+  margin-bottom: 2rem;
+}
+
+.nav__logo-icon{
+  font-size: 1.25rem;
+  color: var(--white-color);
+}
+
+.nav__logo-name{
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.nav__link{
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 0.5rem;
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: var(--white-color);
+}
+
+.nav__icon{
+  font-size: 1.25rem;
+}
+
+/*Show navbar movil*/
+.show{
+  left: 0;
+}
+
+/*Add padding body movil*/
+.body-pd{
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+/*Active links*/
+.active{
+  color: var(--white-color);
+}
+
+.active::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+
+.wrapper{
+  padding: 25px 0px;
+}
+
+.wrapper .wrapper-title{
+  color: #767676;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.wrapper .rows{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.wrapper .box {
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px 1px gray;
+  border-radius: 5px;
+  padding: 0px 10px;
+  width: 23.4%;
+  margin: 0px 20px 20px 0px;
+}
+
+.wrapper .box .row img{
+  height: 60px;
+  width: 60px;
+}
+
+.wrapper .box .row h3{
+  margin: 20px 0px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.wrapper .box .row p{
+  margin: 0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper .box .row p i{
+  font-size: 25px;
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+.wrapper .box .row .imgBx{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .box .box-footer{
+  padding: 8px;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  color: #4CAF50;
+  margin-bottom: 0px;
+  margin: 5px 0px;
+}
+
+.wrapper .box .box-footer i{
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+
+/* ===== MEDIA QUERIES=====*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 576px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (min-width: 768px){
+  body{
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
+  .header{
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+  .header__img{
+    width: 230px;
+    height: 45px;
+  }
+
+  .header__img img{
+    width: 45px;
+  }
+
+  .l-navbar{
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+  
+  /*Show navbar desktop*/
+  .show{
+    width: calc(var(--nav-width) + 156px);
+  }
+
+  /*Add padding body desktop*/
+  .body-pd{
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .wrapper .box {
+    width: 48vw;
+    margin: 0px 20px 20px 0px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .wrapper .box {
+    width: 23.4%;
+    margin: 0px 20px 20px 0px;
+  }
+}
